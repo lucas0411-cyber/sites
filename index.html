@@ -13,23 +13,77 @@
         <h1>meu site</h1>
         <span id="burguer" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
         <menu id="itens">
+            <form id="menu-search-form" onsubmit="searchMenu(event)">
+                <input id="menu-search" type="search" placeholder="Pesquisar" aria-label="Pesquisar menu">
+                <button type="submit" aria-label="Pesquisar">🔍</button>
+                <button type="button" id="menu-search-clear" onclick="clearMenuSearch()" aria-label="Limpar">✖</button>
+            </form>
         <ul>
-            <li><a href="#">opção 1</a></li>
-            <li><a href="#">opção 2</a></li>
-            <li><a href="#">opção 3</a></li>
-            <li><a href="#">opção 4</a></li>
-            <li><a href="#">opção 5</a></li>
+            <li><a href="#">camisas</a></li>
+            <li><a href="#">calças</a></li>
+            <li><a href="#">calçados</a></li>
+            <li><a href="#">moletons</a></li>
         </ul>
         </menu>
     </header>
     <main>
         <article>
-            <h2>testando media queries</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo amet cumque labore officiis optio animi nemo odit quas inventore totam iusto aliquam vel aperiam dignissimos non, quos eaque commodi atque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ipsa architecto laboriosam dicta veritatis molestiae earum sint cum, eum necessitatibus doloribus corporis possimus adipisci nihil a error delectus similique rerum. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error laudantium reiciendis eaque consequuntur architecto, voluptatem obcaecati neque esse veniam odio assumenda recusandae in. Quam fugit, id laborum dolorem ab amet!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque inventore illo perferendis velit porro omnis architecto, quam enim veniam nesciunt ipsum molestias molestiae labore commodi at in nemo assumenda Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo veritatis magnam vero, sint soluta libero eos fugiat eveniet voluptates architecto enim numquam deleniti cum, optio nobis tempora et? Excepturi, sint! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quod fuga cumque dicta, nulla veritatis veniam dolor repudiandae tenetur, rerum dolore eveniet. Ducimus nisi laudantium accusantium deleniti omnis ipsum dolores?</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui corporis maiores quod. Saepe repellat similique voluptatem a tempora, aliquam nam, veritatis dignissimos eaque odio explicabo doloremque, tenetur veniam neque consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur cum, rerum ipsam unde delectus quasi. Autem consequatur incidunt cupiditate, corporis doloremque fugiat! A accusamus sed incidunt quam repellat dolor quae? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo quia inventore unde excepturi voluptatibus, nemo quibusdam eum perspiciatis assumenda adipisci cum. Doloremque, expedita dolorum. Aperiam dignissimos fugit velit tempore iste!</p>
+            
         </article>
     </main>
+    <section id="anuncios-roupas" class="anuncios-roupas">
+        <h2 class="anuncios-title">Ofertas em Roupas</h2>
+        <div class="ads-grid">
+            <div class="ad-card ad-300" data-name="Camisa Polo">
+                <img src="https://via.placeholder.com/300x250?text=Camisa+Polo" alt="Camisa Polo">
+                <div class="ad-info">
+                    <button class="buy-btn" data-name="Camisa Polo">Comprar</button>
+                </div>
+            </div>
+            <div class="ad-card ad-300" data-name="Calça Jeans">
+                <img src="https://via.placeholder.com/300x250?text=Calça+Jeans" alt="Calça Jeans">
+                <div class="ad-info">
+                    <button class="buy-btn" data-name="Calça Jeans">Comprar</button>
+                </div>
+            </div>
+            <div class="ad-card ad-300" data-name="Tênis Casual">
+                <img src="https://via.placeholder.com/300x250?text=Tênis+Casual" alt="Tênis Casual">
+                <div class="ad-info">
+                    <button class="buy-btn" data-name="Tênis Casual">Comprar</button>
+                </div>
+            </div>
+            <div class="ad-card ad-300" data-name="Moletom Com Capuz">
+                <img src="https://via.placeholder.com/300x250?text=Moletom+Capuz" alt="Moletom Com Capuz">
+                <div class="ad-info">
+                    <button class="buy-btn" data-name="Moletom Com Capuz">Comprar</button>
+                </div>
+            </div>
+            <div class="ad-card ad-300" data-name="Vestido Floral">
+                <img src="https://via.placeholder.com/300x250?text=Vestido+Floral" alt="Vestido Floral">
+                <div class="ad-info">
+                    <button class="buy-btn" data-name="Vestido Floral">Comprar</button>
+                </div>
+            </div>
+            <div class="ad-card ad-300" data-name="Jaqueta de Couro">
+                <img src="https://via.placeholder.com/300x250?text=Jaqueta+de+Couro" alt="Jaqueta de Couro">
+                <div class="ad-info">
+                    <button class="buy-btn" data-name="Jaqueta de Couro">Comprar</button>
+                </div>
+            </div>
+            <div class="ad-card ad-300" data-name="Shorts Esportivos">
+                <img src="https://via.placeholder.com/300x250?text=Shorts+Esportivos" alt="Shorts Esportivos">
+                <div class="ad-info">
+                    <button class="buy-btn" data-name="Shorts Esportivos">Comprar</button>
+                </div>
+            </div>
+            <div class="ad-card ad-300" data-name="Blusa de Frio">
+                <img src="https://via.placeholder.com/300x250?text=Blusa+de+Frio" alt="Blusa de Frio">
+                <div class="ad-info">
+                    <button class="buy-btn" data-name="Blusa de Frio">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </section>
     <script>
 
         function mudoutamanho() {
@@ -47,6 +101,48 @@
                 itens.style.display = 'block'
             }
         }
+
+        function searchMenu(e){
+            e.preventDefault();
+            const q = document.getElementById('menu-search').value.trim().toLowerCase();
+
+            // filtrar itens do menu (se houver)
+            const items = document.querySelectorAll('#itens ul li');
+            items.forEach(li => {
+                const text = li.textContent.toLowerCase();
+                li.style.display = q === '' ? 'list-item' : (text.indexOf(q) !== -1 ? 'list-item' : 'none');
+            });
+
+            // filtrar produtos na seção de anúncios por data-name ou alt da imagem
+            const cards = document.querySelectorAll('#anuncios-roupas .ad-card');
+            cards.forEach(card => {
+                const name = (card.dataset.name || card.querySelector('img')?.alt || '').toLowerCase();
+                if(q === ''){
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = name.indexOf(q) !== -1 ? 'block' : 'none';
+                }
+            });
+        }
+
+        function clearMenuSearch(){
+            const input = document.getElementById('menu-search');
+            input.value = '';
+            const items = document.querySelectorAll('#itens ul li');
+            items.forEach(li => li.style.display = 'list-item');
+            const cards = document.querySelectorAll('#anuncios-roupas .ad-card');
+            cards.forEach(card => card.style.display = 'block');
+            input.focus();
+        }
+
+        // redireciona para a página do produto quando botão comprar é clicado
+        document.addEventListener('click', function(e){
+            const btn = e.target.closest('.buy-btn');
+            if(!btn) return;
+            const name = btn.dataset.name || btn.textContent || 'produto';
+            const url = 'produto.html?name=' + encodeURIComponent(name);
+            window.location.href = url;
+        });
     </script>
 </body>
 </html>
