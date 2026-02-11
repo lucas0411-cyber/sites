@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="estilo/media-query.css">
     <title>Produto</title>
     <style>
-        .produto-container{width:90%;height:auto;max-width:800px;margin:0 auto;background:transparent;padding:0;border-radius:0;min-height:70vh}
+        .produto-container{width:90%;height:80vh;max-width:800px;margin:0 auto;background:transparent;padding:0;border-radius:0;overflow:hidden}
         .produto-title{font-size:20px;margin-bottom:8px}
-        .produto-img{width:100%;height:420px;object-fit:cover;border-radius:6px;margin-bottom:12px}
+        .produto-img{object-fit:cover;border-radius:6px;margin-bottom:12px}
         .comprar-primary{background:#0b74de;color:#fff;padding:10px 14px;border-radius:6px;border:none;font-weight:700;cursor:pointer;transition:all 0.3s ease}
         .comprar-primary:disabled{background:#888;cursor:not-allowed;opacity:0.6}
         .comprar-primary:hover:not(:disabled){background:#0a5db3}
@@ -28,19 +28,11 @@
         .preco-label{font-weight:600;font-size:14px;color:#333}
         #preco-unitario{font-size:18px;font-weight:700;color:#d67e04;margin-left:10px}
         #preco-total{font-size:16px;color:#666;margin-top:8px;padding-top:8px;border-top:1px solid#e0be64}
-        .frete-container{margin:15px 0;padding:12px;background:#d4edda;border-radius:6px;border-left:4px solid #28a745}
-        .frete-label{font-weight:600;font-size:14px;color:#333}
-        .frete-opcoes{display:flex;flex-direction:column;gap:8px;margin-top:10px}
-        .frete-opcao{display:flex;align-items:center;gap:10px}
-        .frete-opcao input[type="radio"]{cursor:pointer}
-        .frete-opcao label{cursor:pointer;font-size:14px;margin:0}
-        #frete-valor{font-weight:700;color:#28a745;margin-left:10px}
-        #valor-final{margin-top:12px;padding-top:12px;border-top:1px solid #5cbe5f;font-size:16px;font-weight:700;color:#155724;padding:10px;background:#fff;border-radius:4px}
     </style>
 </head>
 <body>
     <header>
-        <h1>meu site</h1>
+        <h1>outlet</h1>
     </header>
     <main>
         <a href="index.html" class="voltar-btn">← Voltar</a>
@@ -64,24 +56,6 @@
                     <span id="preco-unitario">R$ 0,00</span>
                     <div id="preco-total">Total: R$ 0,00</div>
                 </div>
-                <div class="frete-container">
-                    <span class="frete-label">Opção de Frete:</span>
-                    <div class="frete-opcoes">
-                        <div class="frete-opcao">
-                            <input type="radio" id="frete-normal" name="frete" value="10" checked onchange="calcularFrete()">
-                            <label for="frete-normal">Frete Normal (5-7 dias) - R$ 10,00</label>
-                        </div>
-                        <div class="frete-opcao">
-                            <input type="radio" id="frete-expresso" name="frete" value="25" onchange="calcularFrete()">
-                            <label for="frete-expresso">Frete Expresso (2-3 dias) - R$ 25,00</label>
-                        </div>
-                        <div class="frete-opcao">
-                            <input type="radio" id="frete-agendado" name="frete" value="0" onchange="calcularFrete()">
-                            <label for="frete-agendado">Retire na loja (Grátis)</label>
-                        </div>
-                    </div>
-                    <div id="valor-final">Valor Final: R$ 0,00</div>
-                </div>
                 <button id="buy-now" class="comprar-primary" onclick="enviarContato()">Entrar em contato com vendedor</button>
             </section>
         </article>
@@ -95,13 +69,6 @@
         // Sistema de Preço
         const precoData = {
             'Produto': 99.90 // Preço unitário
-        };
-
-        // Sistema de Frete
-        const fretesDisponiveis = {
-            'normal': 10,
-            'expresso': 25,
-            'gratis': 0
         };
 
         // Simular carregamento de dados do produto
@@ -156,22 +123,6 @@
             const precoTotal = (precoUnitario * quantidade).toFixed(2);
             
             document.getElementById('preco-total').textContent = `Total: R$ ${precoTotal.replace('.', ',')}`;
-            calcularFrete();
-        }
-
-        // Calcular frete e valor final
-        function calcularFrete() {
-            const freteRadio = document.querySelector('input[name="frete"]:checked');
-            const frete = parseFloat(freteRadio.value);
-            const precoTotalText = document.getElementById('preco-total').textContent;
-            const precoNumerico = parseFloat(precoTotalText.replace('Total: R$ ', '').replace(',', '.'));
-            const valorFinal = (precoNumerico + frete).toFixed(2);
-            
-            // Atualizar exibição do valor final
-            const freteLabel = freteRadio.nextElementSibling.textContent;
-            const freteFormatado = frete === 0 ? 'Grátis' : `R$ ${frete.toFixed(2).replace('.', ',')}`;
-            
-            document.getElementById('valor-final').textContent = `Frete: ${freteFormatado} | Valor Final: R$ ${valorFinal.replace('.', ',')}`;
         }
 
         // Função para enviar contato com quantidade selecionada
